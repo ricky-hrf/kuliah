@@ -23,7 +23,7 @@ $bk = query("SELECT * FROM buku WHERE id = $id");
     <li><img src="asset/gambar/<?= $bk['gambar']; ?>" width="100" height="100"></li>
     <li>Judul : <?= $bk['judul']; ?></li>
     <li>Pengarang : <?= $bk['pengarang']; ?></li>
-    <LI><a href="">ubah</a> | <a href="">Hapus</a></LI>
+    <LI><a href="">ubah</a> | <a href="hapus.php?id=<?= $bk['id']; ?>" onclick="return confirm('yakin ingin menghapus data?')">Hapus</a></LI>
     <a href="index.php">Kembali</a>
 
   </ul>

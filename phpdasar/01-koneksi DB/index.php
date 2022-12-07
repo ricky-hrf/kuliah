@@ -28,25 +28,21 @@ $buku = query("SELECT * FROM buku");
   </div>
   <div class="content">
     <h1>Daftar Buku</h1>
-    <table border="1" cellpadding="10" cellspacing="0">
-      <tr>
-        <th>No</th>
-        <th>Judul Buku</th>
-        <th>Gambar</th>
-        <th>Action</th>
-        </th>
+    <button><a href="tambah.php">Tambah data</a></button>
+    <table cellpadding="30" cellspacing="20">
 
-        <?php $i = 1;
-        foreach ($buku as $bk) : ?>
-      <tr>
-        <td><?= $i++; ?></td>
-        <td><?= $bk['judul']; ?></td>
-        <td><img src="asset/gambar/<?= $bk['gambar']; ?>" width="60" height="60"></td>
-        <td><a href="detail.php?id=<?= $bk['id']; ?>">lihat detail</a></td>
-      </tr>
-    <?php endforeach; ?>
+
+      <?php $i = 1;
+      foreach ($buku as $bk) : ?>
+        <tr>
+          <td><?= $i++; ?>.</td>
+          <td><a href="detail.php?id=<?= $bk['id']; ?>"><?= $bk['judul']; ?></a></td>
+          <td><a href="detail.php?id=<?= $bk['id']; ?>"><img src="asset/gambar/<?= $bk['gambar']; ?>" width="60" height="60"></a></td>
+        </tr>
+      <?php endforeach; ?>
 
     </table>
+
   </div>
 </body>
 
